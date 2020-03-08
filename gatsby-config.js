@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Bulma Site Template',
-    description: 'Simple site template using React styled with Bulma and compiled with Gatsby',
-    author: '@pwiewiora',
+    title: 'Won S Kim Portfolio Site',
+    description: 'Simple and clean portfolio site using React styled with Bulma and compiled with Gatsby',
+    author: 'Won S Kim',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -31,5 +31,14 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-transition-link`,
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`
+      }
+    }
   ],
 }

@@ -1,1 +1,16 @@
-@import "~bulma/bulma.sass"
+@charset "utf-8";
+
+@import "./variables.scss";
+@import "~bulma/bulma.sass";
+@import "~bulma-switch";
+
+.dark {
+    background-color: $dark-color;
+    color: $light-color;
+    transition: all 0.6s ease;
+}
+
+.light {
+    transition: all 0.6s ease;
+    background-color: $light-color;
+}

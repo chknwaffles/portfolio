@@ -1,55 +1,62 @@
-import React, { Children } from 'react'
-import { Link } from 'gatsby'
+import React, { useState, useContext } from 'react'
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+
 import logo from '../images/gatsby-icon.png'
+import {FaMoon, FaRegMoon } from 'react-icons/fa'
+import ThemeContext from './theme-context'
 
 const NavbarItem = props => (
-  <Link className="navbar-item is-capitalized" to={props.page}>
-    {props.pagename}
-  </Link>
-)
-const NavbarBurger = props => (
-  <div
-    onClick={props.toggleMenu}
-    className={`navbar-burger burger ${props.active ? 'is-active' : ''}`}
-  >
-    <span />
-    <span />
-    <span />
-  </div>
+    <AniLink swipe direction='left' className="navbar-item is-capitalized has-text-dark" to={props.page}>
+        {props.pagename}
+    </AniLink>
 )
 
-export default class Navbar extends React.Component {
-  state = {
-    activeMenu: false,
-  }
-  toggleMenu = () => {
-    this.setState({
-      activeMenu: !this.state.activeMenu,
-    })
-  }
-  render() {
+const NavbarBurger = props => (
+    <div
+        onClick={props.toggleMenu}
+        className={`navbar-burger burger ${props.active ? 'is-active' : ''}`}
+    >
+        <span className='has-text-dark'/>
+        <span className='has-text-dark'/>
+        <span className='has-text-dark'/>
+    </div>
+)
+
+const NavBar = () => {
+    const { darkMode, toggleMode } = useContext(ThemeContext)
+    const [view, setView] = useState(false)
+
+    const toggleMenu = () => setView(!view)
+
     return (
-      <nav className="navbar is-fixed-top has-shadow is-primary">
-        <div className="container">
-        <div className="navbar-brand">
-          <Link className="navbar-item" to="/">
-            <img src={logo} alt="logo" />
-          </Link>
-          <NavbarBurger
-            active={this.state.activeMenu}
-            toggleMenu={this.toggleMenu}
-          />
+        <div className='hero-head'>
+            <nav className={`navbar is-fixed-top has-shadow ${darkMode ? 'is-dark' : 'is-primary'}`}>
+                <div className="container">
+                    <div className="navbar-brand">
+                        <AniLink className="navbar-item" to="/">
+                            <img src={logo} alt="logo" />
+                        </AniLink>
+                        <NavbarBurger
+                            active={view}
+                            toggleMenu={toggleMenu}
+                        />
+                    </div>
+                    <div className={`navbar-menu ${view ? 'is-active' : ''}`} >
+                        <div className="navbar-end">
+                            <NavbarItem page="/projects/" pagename="Projects" />
+                            <NavbarItem page="/about/" pagename="About" />
+                            <div className='navbar-item is-primary has-text-dark' onClick={() => toggleMode()}>
+                                <span className='icon'>
+                                    {darkMode ? <FaRegMoon /> : <FaMoon />}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div
-          className={`navbar-menu ${this.state.activeMenu ? 'is-active' : ''}`}
-        >
-          <div className="navbar-end">
-            <NavbarItem page="/" pagename="Home" />
-            <NavbarItem page="/page-2/" pagename="Page 2" />
-          </div>
-        </div>
-        </div>
-      </nav>
     )
-  }
 }
+
+export default NavBar;
+

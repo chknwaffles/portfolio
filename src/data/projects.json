@@ -1,0 +1,22 @@
+{
+    "projects": [
+        {
+            "name": "Bomber Pandas",
+            "description": "A bomberman clone, 2D maze-like player vs player game",
+            "stack": ["MongoDB", "Express", "React", "Node", "HTML Canvas", "Javascript", "Websockets"],
+            "github": "https://github.com/chknwaffles/bomberpandas"
+        },
+        {
+            "name": "Pokemon Team Builder",
+            "description": "A website that lets you search a database of all Pokemon including their statistics, movesets, weaknesses, etc and create/save teams of Pokemon",
+            "stack": ["PostgreSQL", "Ruby on Rails", "React", "Javascript"],
+            "github": "https://github.com/chknwaffles/pokemontb"
+        },
+        {
+            "name": "forSale",
+            "description": "A community driven market single page web application",
+            "stack": ["PostgreSQL", "Ruby on Rails", "Javascript", "jQuery"],
+            "github": "https://github.com/chknwaffles/forsale"
+        }
+    ]
+}
