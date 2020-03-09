@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import { GoLogoGithub } from 'react-icons/go'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -19,25 +20,27 @@ const ProjectsPage = () => {
     `)
 
     const renderProjects = () => {
-        return data.dataJson.projects.map(p => {
+        return data.dataJson.projects.map((p, i) => {
             return (
-                <div className='card'>
-                    <div className='card-content'>
-                        <div className='media'>
-                            <div className='media-content'>
-                                <p className="title is-4">{p.name}</p>
-                                <p className="subtitle is-6">{p.stack.join(', ')}</p>
+                <section className='hero has-text-centered' id={`project-sec-${i + 1}`}>
+                    <div className='hero-body'>
+                        <div className='container'>
+                            <h3 className='title is-3'>{p.name}</h3>
+                            <h5 className='title is-5'>{p.stack.join(', ')}</h5>
+                            <div className='container'>
+                                <p>
+                                    {p.description}
+                                </p>
+                                <br />
+                                <a href={p.github}>
+                                    <span className='icon is-medium'>
+                                        <GoLogoGithub color='#393232' size='2.5em' />
+                                    </span>
+                                </a>
                             </div>
                         </div>
-                        <div class="content">
-                            {p.description}
-                        </div>
                     </div>
-
-                    <footer class="card-footer">
-                        <a href={p.github} class="card-footer-item">Github Source</a>
-                    </footer>
-                </div>
+                </section>
             )
         })
     }
@@ -45,14 +48,12 @@ const ProjectsPage = () => {
     return (
         <Layout>
             <SEO title="Home" keywords={['gatsby', 'application', 'react', 'projects']} />
-            <section className='section has-text-centered'>
-                <div className='container is-centered'>
-                    <div className='container'>
-                        {renderProjects()}
-
-                    </div>
-                </div>
-            </section>
+            <div className='section has-text-centered'>
+                <h3 className='title is-3'>
+                    My Projects
+                </h3>
+            </div>
+            {renderProjects()}
         </Layout>
     )
 }

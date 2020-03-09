@@ -23,6 +23,5 @@ export default () => (
                 </ul>
             </div>
         </div>
-        <br />
     </div>
 )

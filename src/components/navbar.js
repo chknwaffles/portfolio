@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import useDarkMode from 'use-dark-mode'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import {FaMoon, FaRegMoon } from 'react-icons/fa'
+import {FaMoon, FaRegSun } from 'react-icons/fa'
 
 const NavbarItem = props => (
-    <AniLink swipe direction='left' className="navbar-item" to={props.page}>
+    <AniLink swipe direction='up' className="navbar-item" to={props.page} entryOffset={500}>
         {props.pagename}
     </AniLink>
 )
@@ -12,7 +12,10 @@ const NavbarItem = props => (
 const NavbarBurger = props => (
     <div
         onClick={props.toggleMenu}
+        onKeyDown={props.toggleMenu}
         className={`navbar-burger burger ${props.active ? 'is-active' : ''}`}
+        role='button'
+        tabIndex='0'
     >
         <span />
         <span />
@@ -36,14 +39,14 @@ const NavBar = () => {
                     toggleMenu={toggleMenu}
                 />
             </div>
-            <div className={`navbar-menu ${view ? 'is-active' : ''}`} >
+            <div className={`navbar-menu is-transparent ${view ? 'is-active' : ''}`} >
                 <div className="navbar-end">
                     <NavbarItem page='/' pagename='Home' />
                     <NavbarItem page="/projects/" pagename="Projects" />
                     <NavbarItem page="/about/" pagename="About" />
-                    <span className='navbar-item' id='dark-toggle' onClick={darkMode.toggle}>
+                    <span className='navbar-item' id='dark-toggle' role='button' tabIndex='0' onClick={darkMode.toggle} onKeyDown={darkMode.toggle} >
                         <span className='icon'>
-                            {darkMode.value ? <FaRegMoon /> : <FaMoon />}
+                            {darkMode.value ? <FaRegSun /> : <FaMoon />}
                         </span>
                     </span>
                 </div>
