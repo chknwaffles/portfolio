@@ -7,7 +7,7 @@ $sec5-color: #B5EAD7;
 #project-sec-1 {
     background-color: $sec1-color;
     &:hover {
-        background-color: findColorInvert($sec1-color);
+        box-shadow: 20px 50px 100px $sec2-color;
         transition: all 0.6s ease;
     }
 }
@@ -15,7 +15,7 @@ $sec5-color: #B5EAD7;
 #project-sec-2 {
     background-color: $sec2-color;
     &:hover {
-        background-color: findColorInvert($sec2-color);
+        box-shadow: 20px 50px 100px $sec3-color;
         transition: all 0.6s ease;
     }
 }
@@ -23,7 +23,7 @@ $sec5-color: #B5EAD7;
 #project-sec-3 {
     background-color: $sec3-color;
     &:hover {
-        background-color: findColorInvert($sec3-color);
+        box-shadow: 20px 50px 100px $sec4-color;
         transition: all 0.6s ease;
     }
 }
@@ -31,7 +31,7 @@ $sec5-color: #B5EAD7;
 #project-sec-4 {
     background-color: $sec4-color;
     &:hover {
-        background-color: findColorInvert($sec4-color);
+        box-shadow: 20px 50px 100px $sec5-color;
         transition: all 0.6s ease;
     }
 }
@@ -39,7 +39,7 @@ $sec5-color: #B5EAD7;
 #project-sec-5 {
     background-color: $sec5-color;
     &:hover {
-        background-color: findColorInvert($sec5-color);
+        box-shadow: 20px 50px 100px $sec1-color;
         transition: all 0.6s ease;
     }
 }

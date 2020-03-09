@@ -14,7 +14,6 @@
     "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-sharp": "^2.4.7",
     "gatsby-plugin-transition-link": "^1.18.0",
-    "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-source-filesystem": "^2.1.50",
     "gatsby-transformer-json": "^2.2.27",
     "gatsby-transformer-sharp": "^2.3.17",
@@ -25,8 +24,7 @@
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
-    "react-typist": "^2.0.5",
-    "use-dark-mode": "^2.3.1"
+    "react-typist": "^2.0.5"
   },
   "keywords": [
     "gatsby"

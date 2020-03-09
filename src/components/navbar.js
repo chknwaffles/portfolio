@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import useDarkMode from 'use-dark-mode'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import {FaMoon, FaRegSun } from 'react-icons/fa'
 
 const NavbarItem = props => (
     <AniLink swipe direction='up' className="navbar-item" to={props.page} entryOffset={500}>
@@ -25,7 +23,6 @@ const NavbarBurger = props => (
 
 const NavBar = () => {
     const [view, setView] = useState(false)
-    const darkMode = useDarkMode(false)
     const toggleMenu = () => setView(!view)
 
     return (
@@ -44,11 +41,6 @@ const NavBar = () => {
                     <NavbarItem page='/' pagename='Home' />
                     <NavbarItem page="/projects/" pagename="Projects" />
                     <NavbarItem page="/about/" pagename="About" />
-                    <span className='navbar-item' id='dark-toggle' role='button' tabIndex='0' onClick={darkMode.toggle} onKeyDown={darkMode.toggle} >
-                        <span className='icon'>
-                            {darkMode.value ? <FaRegSun /> : <FaMoon />}
-                        </span>
-                    </span>
                 </div>
             </div>
         </div>

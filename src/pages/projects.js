@@ -19,14 +19,22 @@ const ProjectsPage = () => {
         }
     `)
 
+    const handleHover = (e) => {
+        if (e.type === 'mouseleave') {
+            document.body.classList.remove(e.currentTarget.id)
+        } else if (e.type === 'mouseenter') {
+            document.body.classList.add(e.currentTarget.id)
+        }
+    }
+
     const renderProjects = () => {
         return data.dataJson.projects.map((p, i) => {
             return (
-                <section className='hero has-text-centered' id={`project-sec-${i + 1}`}>
+                <section key={i} className='hero has-text-centered' id={`project-sec-${i + 1}`} onMouseEnter={handleHover} onMouseLeave={handleHover}>
                     <div className='hero-body'>
                         <div className='container'>
                             <h3 className='title is-3'>{p.name}</h3>
-                            <h5 className='title is-5'>{p.stack.join(', ')}</h5>
+                            <h6 className='title is-6'>{p.stack.join(', ')}</h6>
                             <div className='container'>
                                 <p>
                                     {p.description}
