@@ -2,31 +2,31 @@
     "projects": [
         {
             "name": "Bomber Pandas",
-            "description": "A bomberman clone, 2D maze-like player vs player game",
+            "description": "A bomberman clone, 2D maze-like player vs player game with custom sprites and CSS",
             "stack": ["MongoDB", "Express", "React", "Node", "HTML Canvas", "Javascript", "Websockets"],
             "github": "https://github.com/chknwaffles/bomberpandas"
         },
         {
             "name": "Pokemon Team Builder",
-            "description": "A website that lets you search a database of all Pokemon including their statistics, movesets, weaknesses, etc and create/save teams of Pokemon",
+            "description": "A website that lets users build their dream pokemon teams and save them to their profile for future use. Users can also search a database of all Pokemon including their statistics, movesets, weaknesses, etc.",
             "stack": ["PostgreSQL", "Ruby on Rails", "React", "Javascript"],
             "github": "https://github.com/chknwaffles/pokemontb"
         },
         {
             "name": "forSale",
-            "description": "A community driven market single page web application",
+            "description": "A community driven market single page web application where users can list their items and exchange sales in a physical location",
             "stack": ["PostgreSQL", "Ruby on Rails", "Javascript", "jQuery"],
             "github": "https://github.com/chknwaffles/forsale"
         },
         {
             "name": "News Search",
-            "description": "A web application that reports top and current news articles with the ability to save and like articles",
+            "description": "A single page web application that reports top and current news articles with the ability to save and like articles",
             "stack": ["PostgreSQL", "Ruby on Rails", "React", "Javascript"],
             "github": "https://github.com/chknwaffles/news-search"
         },
         {
             "name": "Portfolio Site",
-            "description": "",
+            "description": "Wanted to try out GatsbyJS and decided to build my portfolio site with it!",
             "stack": ["React", "GatsbyJS", "Bulma"],
             "github": "https://github.com/chknwaffles/portfolio"
         }
