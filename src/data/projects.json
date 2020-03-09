@@ -17,6 +17,18 @@
             "description": "A community driven market single page web application",
             "stack": ["PostgreSQL", "Ruby on Rails", "Javascript", "jQuery"],
             "github": "https://github.com/chknwaffles/forsale"
+        },
+        {
+            "name": "News Search",
+            "description": "A web application that reports top and current news articles with the ability to save and like articles",
+            "stack": ["PostgreSQL", "Ruby on Rails", "React", "Javascript"],
+            "github": "https://github.com/chknwaffles/news-search"
+        },
+        {
+            "name": "Portfolio Site",
+            "description": "",
+            "stack": ["React", "GatsbyJS", "Bulma"],
+            "github": "https://github.com/chknwaffles/portfolio"
         }
     ]
 }

@@ -2,15 +2,30 @@
 
 @import "./variables.scss";
 @import "~bulma/bulma.sass";
-@import "~bulma-switch";
 
-.dark {
+
+.dark-mode {
     background-color: $dark-color;
     color: $light-color;
     transition: all 0.6s ease;
 }
 
-.light {
-    transition: all 0.6s ease;
+.light-mode {
     background-color: $light-color;
+    color: $dark-color;
+    transition: all 0.6s ease;
+}
+
+.navbar {
+    &.is-transparent {
+        background-color: transparent;
+        background-image: none;
+    }
+}
+
+.footer {
+    &.is-transparent {
+        background-color: transparent;
+        background-image: none;
+    }
 }

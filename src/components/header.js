@@ -3,9 +3,9 @@ import React from 'react'
 import NavBar from './navbar'
 
 const Header = () => (
-  <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
-    <NavBar />
-  </nav>
+      <nav className='navbar is-transparent' role="navigation" aria-label="main navigation">
+        <NavBar />
+      </nav>
 )
 
 

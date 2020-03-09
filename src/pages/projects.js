@@ -1,50 +1,60 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-const projectTabs = (projects) => {
-    return projects.forEach(p => {
-        return (
-            <li>
-                <a>
-                    <span className="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                    <span>{p.name}</span>
-                </a>
-            </li>
-        )
-    })
-}
-
-const ProjectsPage = () => (
-    <StaticQuery
-        query={graphql`
-            query ProjectsQuery {
-                dataJson {
-                    projects {
-                        name
-                        description
-                        stack
-                        github
-                    }
+const ProjectsPage = () => {
+    const data = useStaticQuery(graphql`
+        query ProjectsQuery {
+            dataJson {
+                projects {
+                    name
+                    description
+                    stack
+                    github
                 }
             }
-        `}
-        render={data => (
-            <Layout>
-                <SEO title="Home" keywords={['gatsby', 'application', 'react', 'projects']} />
+        }
+    `)
+
+    const renderProjects = () => {
+        return data.dataJson.projects.map(p => {
+            return (
+                <div className='card'>
+                    <div className='card-content'>
+                        <div className='media'>
+                            <div className='media-content'>
+                                <p className="title is-4">{p.name}</p>
+                                <p className="subtitle is-6">{p.stack.join(', ')}</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            {p.description}
+                        </div>
+                    </div>
+
+                    <footer class="card-footer">
+                        <a href={p.github} class="card-footer-item">Github Source</a>
+                    </footer>
+                </div>
+            )
+        })
+    }
+
+    return (
+        <Layout>
+            <SEO title="Home" keywords={['gatsby', 'application', 'react', 'projects']} />
+            <section className='section has-text-centered'>
                 <div className='container is-centered'>
-                    <div className='tabs'>
-                        <ul>
-                            {projectTabs(data.dataJson.projects)}
-                        </ul>
+                    <div className='container'>
+                        {renderProjects()}
+
                     </div>
                 </div>
-            </Layout>
-        )}
-    />
-
-)
+            </section>
+        </Layout>
+    )
+}
 
 export default ProjectsPage

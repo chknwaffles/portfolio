@@ -1,30 +1,27 @@
 import React from 'react'
-import Typist from 'react-typist';
+import Typist from 'react-typist'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Toggle from '../components/toggle-mode'
-import ThemeContext from '../components/theme-context'
 
 const IndexPage = () => (
-    <ThemeContext.Consumer>
-        {theme => (
-            <Layout>
-                <SEO title="Home" keywords={['gatsby', 'portfolio', 'react', 'resume']} />
-                <div className={`has-text-centered`}>
-                    <Typist>
-                        <h1 className={`title ${theme.darkMode ? 'has-background-dark has-text-primary' : 'has-background-primary has-text-dark'}`}>
+    <Layout>
+        <SEO title="Home" keywords={['gatsby', 'portfolio', 'react', 'resume']} />
+        <section className={`hero is-large`}>
+            <div className="hero-body is-mobile">
+                <div className='container has-text-centered'>
+                    <Typist cursor={{ show: false }}>
+                        <div className='title'>
                             Hey! Welcome to my site.
-                        </h1>
-                        <h3 className='subtitle'>
+                        </div>
+                        <div className='subtitle'>
                             This was made with React + GatsbyJS and Bulma.
-                        </h3>
+                        </div>
                     </Typist>
-                    <Toggle />
                 </div>
-            </Layout>
-        )}
-    </ThemeContext.Consumer>
+            </div>
+        </section>
+    </Layout>
 )
 
 export default IndexPage
