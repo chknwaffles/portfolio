@@ -7,14 +7,14 @@ export default () => (
             <div className='container'>
                 <ul>
                     <li>
-                        <a href='https://www.github.com/chknwaffles'>
+                        <a aria-label='Github' href='https://www.github.com/chknwaffles'>
                             <span className='icon'>
                                 <FaGithub />
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href='https://www.linkedin.com/in/wonsae-kim/'>
+                        <a aria-label='LinkedIn' href='https://www.linkedin.com/in/wonsae-kim/'>
                             <span className='icon'>
                                 <FaLinkedin />
                             </span>
