@@ -13,6 +13,7 @@ const NavbarBurger = props => (
         onKeyDown={props.toggleMenu}
         className={`navbar-burger burger ${props.active ? 'is-active' : ''}`}
         role='button'
+        aria-label='View More'
         tabIndex='0'
     >
         <span />
