@@ -15,13 +15,15 @@ const AboutPage = () => (
                     I'm a full stack web developer and a US Navy Veteran.
                 </h5>
             </div>
-            <p>
+            <p style={{ padding: '15px' }}>
 
                 I first fell in love with coding when I started playing a game called The Specialists back in 2004.
                 <br />
                 There were really cool third party mods made with AMX Mod X in it. 
+
                 <br />
                 I spent many months learning SMALL (the language used for AMX Mod X) and built a carmod which allowed players to drive around in cars. 
+                
                 <br />
                 While that fun did not last into my military career, I have since then transitioned and honed my skills in web development.
                 <br />
